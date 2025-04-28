@@ -1,0 +1,69 @@
+---
+const textStyles = {
+  banner: 'text-br-text text-br-banner font-br-title uppercase',
+  title: 'text-br-text text-br-title font-br-title uppercase',
+  bigNumber: 'text-br-text text-br-bignumber font-br-title',
+  body: 'text-br-text text-2xl font-br-body',
+  button: 'text-br-text text-xl font-br-body font-bold',
+  buttonSmall: 'text-br-text text-base font-br-body font-bold',
+  badge: 'text-br-text text-base font-br-body',
+  cardTitle: 'text-br-text text-2xl font-br-title',
+  cardBody: 'text-br-text text-lg font-br-body',
+}
+
+type Variant = keyof typeof textStyles
+type TagType =
+  | 'p'
+  | 'a'
+  | 'span'
+  | 'small'
+  | 'div'
+  | 'strong'
+  | 'em'
+  | 'blockquote'
+  | 'summary'
+  | 'label'
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+
+export interface Props {
+  tag?: TagType
+  variant?: Variant
+  class?: string
+  for?: string
+  id?: string
+  href?: string
+}
+
+const variantToTagMap: Partial<Record<Variant, TagType>> = {
+  banner: 'h1',
+  title: 'h2',
+  cardTitle: 'h3',
+}
+
+const {
+  tag = 'p', // default to paragraph
+  variant = 'body', // default to textMD variant
+  class: className = '',
+  for: htmlFor, // Capture 'for' attribute
+  ...rest
+} = Astro.props
+
+const Tag: TagType = tag !== 'p' ? tag : variantToTagMap[variant] || tag
+
+// Get the base classes for the variant
+const baseClasses = textStyles[variant] || textStyles.body // Default to body if not found
+---
+
+<Tag
+  class:list={[baseClasses, className]}
+  for={htmlFor}
+  {...rest}>
+  <slot name='left-icon' />
+  <slot />
+  <slot name='right-icon' />
+</Tag>

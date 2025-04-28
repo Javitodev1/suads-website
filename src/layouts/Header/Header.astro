@@ -1,0 +1,67 @@
+---
+import { LINKS } from '@/data/links'
+import Text from '@/components/Text.astro'
+import Logo from '@/components/Logo.astro'
+---
+
+<header class='fixed top-0 w-full'>
+  <div class='flex justify-between items-center max-w-7xl mx-auto py-8'>
+    <Logo />
+
+    <nav class='flex gap-9 items-center'>
+      <Text
+        tag={'a'}
+        variant={'badge'}
+        href={LINKS.root}
+        >Inicio</Text
+      >
+
+      <details>
+        <summary>
+          <Text
+            tag={'a'}
+            variant={'badge'}
+            href={LINKS.services}
+            >Servicios</Text
+          >
+        </summary>
+
+        <ul>
+          <li>
+            <Text
+              tag={'a'}
+              variant={'badge'}
+              href={LINKS.webdev}
+              >Desarrollo Web</Text
+            >
+          </li>
+
+          <li>
+            <Text
+              tag={'a'}
+              variant={'badge'}
+              href={LINKS.design}
+              >Diseño Gráfico</Text
+            >
+          </li>
+
+          <li>
+            <Text
+              tag={'a'}
+              variant={'badge'}
+              href={LINKS.ads}
+              >Publicidad</Text
+            >
+          </li>
+        </ul>
+      </details>
+
+      <Text
+        tag={'a'}
+        variant={'buttonSmall'}
+        href={LINKS.contact}
+        >Contacto</Text
+      >
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,47 @@
+---
+import Container from '@/components/Container.astro'
+import Text from '@/components/Text.astro'
+import Badge from '@/components/Badge.astro'
+import Card from '@/components/Card.astro'
+
+import type { ICard } from '@/types/content'
+
+export interface Props {
+  badge?: string
+  title?: string
+  cards?: ICard[]
+  id?: string
+}
+
+const { props } = Astro
+---
+
+<Container id={props.id}>
+  <div class='flex flex-col items-center gap-6 mb-12'>
+    <Badge><slot name='badge'><Fragment set:html={props.badge} /></slot></Badge>
+
+    <Text
+      tag={'h2'}
+      variant={'title'}>
+      <slot name='title'><Fragment set:html={props.title} /></slot>
+    </Text>
+  </div>
+
+  <div class='grid grid-cols-3 grid-rows-5 gap-6'>
+    {
+      props.cards?.map((props, index) => {
+        const rowspan = index % 2 === 0 ? 'row-span-3' : 'row-span-2'
+        const colstart = ['col-start-1', 'col-start-2', 'col-start-3'][
+          index % 3
+        ]
+        const fixrowspan = index === 4 ? 'row-start-3' : ''
+        return (
+          <Card
+            class:list={[rowspan, colstart, fixrowspan]}
+            {...props}
+          />
+        )
+      })
+    }
+  </div>
+</Container>

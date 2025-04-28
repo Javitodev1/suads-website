@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "title": "Haz que tu negocio esté siempre disponible con un sitio web",
+    "body": "Mantener tu negocio disponible 24/7 significa estar al alcance de tus clientes en todo momento, sin límites de horario ni ubicación. Con un sitio web, tus productos y servicios están siempre listos para ser descubiertos, generando ventas y aumentando la visibilidad de tu marca mientras tus competidores cierran. "
+  },
+  "features": {
+    "title": "esto es lo que podemos hacer por tu sitio web ",
+    "cards": [
+      {
+        "title": "Desarrollo de E-commerce",
+        "body": ""
+      },
+      {
+        "title": "Desarrollo de Páginas Web Corporativas",
+        "body": ""
+      },
+      {
+        "title": "Landing Pages para atraer y Convertir",
+        "body": ""
+      }
+    ]
+  },
+  "howWork": {
+    "badge": "¡Como lo hacemos?",
+    "title": "La Estrategia Detrás de Cada Proyecto Web",
+    "cards": [
+      {
+        "title": "Estudio de requrimientos",
+        "body": ""
+      },
+      {
+        "title": "Planificacion estructura web",
+        "body": ""
+      },
+      {
+        "title": "propuesta grafica",
+        "body": ""
+      },
+      {
+        "title": "Maquetacion y programacion",
+        "body": ""
+      },
+      {
+        "title": "Revision y optimizacion",
+        "body": ""
+      },
+      {
+        "title": "Publicacion y mantenimiento",
+        "body": ""
+      }
+    ]
+  },
+  "portfolio": {
+    "badge": "Portfolio",
+    "title": "Proyectos que hablan por nosotros",
+    "cards": []
+  }
+}

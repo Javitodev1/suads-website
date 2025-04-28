@@ -1,0 +1,74 @@
+---
+import { Features } from '@/modules'
+
+import type { IHome } from '@/types/content'
+
+import * as Modules from './modules'
+
+import { LINKS } from '@/data/links'
+
+interface Props {
+  content: IHome
+}
+
+const { content } = Astro.props
+---
+
+{
+  content.hero && (
+    <Modules.Hero
+      id='hero'
+      href={LINKS.contact}
+      {...content.hero}
+    />
+  )
+}
+
+{
+  content.about && (
+    <Modules.About
+      id='about'
+      href={LINKS.contact}
+      {...content.about}
+    />
+  )
+}
+
+{
+  content.features && (
+    <Features
+      id='features'
+      {...content.features}
+    />
+  )
+}
+
+{
+  content.customers && (
+    <Modules.Customers
+      id='customers'
+      {...content.customers}>
+      <span>Noemi Cabana</span>
+      <span>Lighthouse</span>
+      <span>Amatista</span>
+    </Modules.Customers>
+  )
+}
+
+{
+  content.services && (
+    <Modules.Services
+      id='services'
+      {...content.services}
+    />
+  )
+}
+
+{
+  content.stats && (
+    <Modules.Stats
+      id='stats'
+      {...content.stats}
+    />
+  )
+}

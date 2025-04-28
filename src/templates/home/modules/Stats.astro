@@ -1,0 +1,29 @@
+---
+import Container from '@/components/Container.astro'
+import Text from '@/components/Text.astro'
+import StatCard from '@/components/StatCard.astro'
+
+import type { ICard } from '@/types/content'
+
+export interface Props {
+  title?: string
+  cards?: ICard[]
+  id?: string
+}
+
+const { props } = Astro
+---
+
+<Container id={props.id}>
+  <div class='max-w-3xl'>
+    <Text
+      tag={'h2'}
+      variant={'title'}>
+      <slot name='title'><Fragment set:html={props.title} /></slot>
+    </Text>
+
+    <div class='mt-24 grid grid-cols-2 gap-24'>
+      {props.cards?.map((props) => <StatCard {...props} />)}
+    </div>
+  </div>
+</Container>

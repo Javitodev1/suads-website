@@ -1,0 +1,28 @@
+---
+import Text from './Text.astro'
+
+interface Props {
+  title?: string
+  body?: string
+  class?: string
+}
+
+const { class: className = '', title, body } = Astro.props
+---
+
+<article class={className}>
+  <slot name='before' />
+
+  <Text
+    tag={'h3'}
+    variant={'cardTitle'}
+    ><slot name='title'><Fragment set:html={title} /></slot></Text
+  >
+  <Text
+    tag={'p'}
+    variant={'cardBody'}
+    ><slot name='body'><Fragment set:html={body} /></slot></Text
+  >
+
+  <slot name='after' />
+</article>

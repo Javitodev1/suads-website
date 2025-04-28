@@ -1,0 +1,23 @@
+---
+import { AccordionContainer, AccordionItem } from './components'
+
+import type { ICard } from '@/types/content'
+
+export interface Props {
+  cards?: ICard[]
+}
+
+const { cards = [] } = Astro.props
+---
+
+<AccordionContainer>
+  {
+    cards.map((props, index) => (
+      <AccordionItem
+        index={index}
+        expanded={index === 0}
+        {...props}
+      />
+    ))
+  }
+</AccordionContainer>

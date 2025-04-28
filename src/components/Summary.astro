@@ -1,0 +1,17 @@
+---
+import Text from './Text.astro'
+
+export interface Props {
+  title?: string
+  body?: string
+}
+
+const { props } = Astro
+---
+
+<article>
+  <details>
+    <summary><Text tag={'h3'}>{props.title}</Text></summary>
+    <Text>{props.body}</Text>
+  </details>
+</article>

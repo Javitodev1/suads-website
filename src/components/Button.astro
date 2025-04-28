@@ -1,0 +1,11 @@
+---
+import Text from './Text.astro'
+
+export interface Props {
+  href?: string
+}
+
+const { href = '#' } = Astro.props
+---
+
+<Text tag={'a'} href={href} variant={'button'} class='block w-fit'><slot /></Text>

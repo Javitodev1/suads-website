@@ -1,0 +1,25 @@
+---
+import { Features } from '@/modules'
+
+import type { IService } from '@/types/content'
+
+import * as Modules from './modules'
+
+import { LINKS } from '@/data/links'
+
+interface Props {
+  content: IService
+}
+
+const { content } = Astro.props
+---
+
+{content.hero && <Modules.Hero {...content.hero} />}
+
+{content.features && <Features {...content.features} />}
+
+{content.howWork && <Modules.HowWork {...content.howWork} />}
+
+{content.whyUs && <Features {...content.whyUs} />}
+
+{content.portfolio && <Modules.Portfolio {...content.portfolio} />}

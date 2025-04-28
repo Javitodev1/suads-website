@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "title": "Hacemos  tu marca  la opción favorita de tus clientes",
+    "body": "Estrategias innovadoras para conectar, impactar y fidelizar.",
+    "badge_ads": "Publicidad",
+    "badge_design": "Diseño Grafico",
+    "badge_webdev": "Desarrollo Web",
+    "cta": "Contact Us"
+  },
+  "about": {
+    "title": "Somos expertos en crear conexiones que acercan tu marca a tus clientes",
+    "body": "Somos tus compañeros de aventura en el fascinante viaje de conseguir clientes ideales. Aquí no eres simplemente \"un cliente más\". Nos sumergimos de lleno en tu proyecto.",
+    "cta": "Contact Us"
+  },
+  "features": {
+    "title": "Lo que nos convierte en tu aliado digital de confianza",
+    "cards": [
+      {
+        "title": "Publicidad Digital",
+        "body": ""
+      },
+      {
+        "title": "Desarrollo y Diseño Web (UX/UI)",
+        "body": ""
+      },
+      {
+        "title": "Branding",
+        "body": ""
+      }
+    ]
+  },
+  "customers": {
+    "badge": "Nuestros clientes",
+    "title": "¡Súmate a las marcas que consiguen clientes con Suads!"
+  },
+  "services": {
+    "badge": "Servicios",
+    "title": "Esto es lo que podemos hacer por ti",
+    "cards": [
+      {
+        "title": "strategias Basada en Datos",
+        "body": "Analizamos métricas  para maximizar el ROI."
+      },
+      {
+        "title": "Atrae Clientes",
+        "body": "Campañas  optimizadas en Google."
+      },
+      {
+        "title": "Conecta con tu audiencia",
+        "body": "Usando redes sociales de forma efectiva."
+      },
+      {
+        "title": "Resultados Tangibles",
+        "body": "Webs optimizadas para captar leads y generar ventas."
+      },
+      {
+        "title": "Conversiones Reales",
+        "body": "Convertimos visitantes en clientes."
+      },
+      {
+        "title": "Social Media Managment",
+        "body": "Trabajo en Equipo, Resultados Alineados."
+      }
+    ]
+  },
+  "stats": {
+    "title": "Transformamos tus ideas en estrategias digitales que atraen, convierten y fidelizan",
+    "cards": [
+      {
+        "title": "5+",
+        "body": "Años creando Estrategias Digitales Exitosas"
+      },
+      {
+        "title": "8+",
+        "body": "impactadas con nuestras soluciones personalizadas."
+      },
+      {
+        "title": "2,000+",
+        "body": "campañas publicitarias gestionadas con resultados comprobados."
+      },
+      {
+        "title": "6+",
+        "body": "áreas de especialización para potenciar el crecimiento de tu marca."
+      }
+    ]
+  }
+}

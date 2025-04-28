@@ -1,0 +1,33 @@
+---
+const containerStyles = {
+  normal: 'py-32',
+  small: 'py-16',
+}
+
+type Variant = keyof typeof containerStyles
+
+interface Props {
+  id?: string
+  class?: string
+  variant?: Variant
+  tag?: 'section' | 'header' | 'footer' | 'div'
+}
+
+const { props } = Astro
+const { tag: Tag = 'section', variant = 'normal' } = props
+
+const style = containerStyles[variant] || containerStyles.normal
+---
+
+<Tag
+  id={props.id}
+  class='bg-br-section'
+  class:list={[props.class]}>
+  <slot name='before' />
+  <div
+    class='max-w-7xl mx-auto'
+    class:list={[style]}>
+    <slot />
+  </div>
+  <slot name='after' />
+</Tag>

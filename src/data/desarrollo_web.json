@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "title": "Haz que tu negocio esté siempre disponible",
+    "body": "Transforma tu negocio en una experiencia disponible 24/7. Con un sitio web, tu empresa nunca duerme: tus productos y servicios estarán al alcance de tus clientes en cualquier momento y lugar, sin restricciones de horario.<br/><br/>Incrementa tus ventas, potencia la visibilidad de tu marca y mantente siempre un paso adelante de la competencia."
+  },
+  "features": {
+    "title": "esto es lo que podemos hacer por tu sitio web ",
+    "cards": [
+      {
+        "title": "Desarrollo de E-commerce",
+        "body": ""
+      },
+      {
+        "title": "Desarrollo de Páginas Web Corporativas",
+        "body": ""
+      },
+      {
+        "title": "Landing Pages para atraer y Convertir",
+        "body": ""
+      }
+    ]
+  },
+  "howWork": {
+    "badge": "¿Como lo hacemos?",
+    "title": "La Estrategia Detrás de Cada Proyecto Web",
+    "cards": [
+      {
+        "title": "Estudio de requrimientos",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatibus ipsam eligendi rerum tenetur mollitia sint maiores atque consequatur repudiandae?"
+      },
+      {
+        "title": "Planificacion estructura web",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatibus ipsam eligendi rerum tenetur mollitia sint maiores atque consequatur repudiandae?"
+      },
+      {
+        "title": "propuesta grafica",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatibus ipsam eligendi rerum tenetur mollitia sint maiores atque consequatur repudiandae?"
+      },
+      {
+        "title": "Maquetacion y programacion",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatibus ipsam eligendi rerum tenetur mollitia sint maiores atque consequatur repudiandae?"
+      },
+      {
+        "title": "Revision y optimizacion",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatibus ipsam eligendi rerum tenetur mollitia sint maiores atque consequatur repudiandae?"
+      },
+      {
+        "title": "Publicacion y mantenimiento",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatibus ipsam eligendi rerum tenetur mollitia sint maiores atque consequatur repudiandae?"
+      }
+    ]
+  },
+  "whyUs": {
+    "title": "esto es lo que podemos hacer por tu sitio web ",
+    "cards": [
+      {
+        "title": "Desarrollo de E-commerce",
+        "body": ""
+      },
+      {
+        "title": "Desarrollo de Páginas Web Corporativas",
+        "body": ""
+      },
+      {
+        "title": "Landing Pages para atraer y Convertir",
+        "body": ""
+      }
+    ]
+  },
+  "portfolio": {
+    "badge": "Portfolio",
+    "title": "Proyectos que hablan por nosotros",
+    "cards": []
+  }
+}

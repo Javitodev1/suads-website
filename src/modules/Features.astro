@@ -1,0 +1,27 @@
+---
+import Container from '@/components/Container.astro'
+import Text from '@/components/Text.astro'
+import Card from '@/components/Card.astro'
+
+import type { ICard } from '@/types/content'
+
+export interface Props {
+  title?: string
+  cards?: ICard[]
+  id?: string
+}
+
+const { props } = Astro
+---
+
+<Container id={props.id}>
+  <Text
+    tag={'h2'}
+    variant={'title'}>
+    <slot name='title'><Fragment set:html={props.title} /></slot>
+  </Text>
+
+  <div class='flex justify-between mt-12'>
+    {props.cards?.map((props) => <Card {...props} />)}
+  </div>
+</Container>

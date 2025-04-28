@@ -1,0 +1,16 @@
+---
+interface Props {
+  id?: string
+  class?: string
+}
+
+const { id = 'accordion-collapse', class: className } = Astro.props
+---
+
+<div
+  class:list={className}
+  class='w-full'
+  id={id}
+  data-accordion='collapse'>
+  <slot />
+</div>

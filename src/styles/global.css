@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/roboto';
+@import '@fontsource/bebas-neue';
+
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+
+@theme {
+  /* Brand Text size */
+  --text-br-banner: 5.5rem; 
+  --text-br-banner--line-height: 1.014;
+
+  --text-br-title: 2.5rem;
+  --text-br-title--line-height: 1.014;
+
+  --text-br-bignumber: 4rem;
+  --text-br-bignumber--line-height: 1.014;
+
+  /* Brand Font families */
+  --font-br-title: 'Bebas Neue', sans-serif;
+  --font-br-body: 'Roboto Variable', sans-serif;
+
+  /* Brand Colors */
+  --color-br-text: #fff;
+  --color-br-section: #04060C;
+}

@@ -1,0 +1,43 @@
+---
+import Text from '@/components/Text.astro'
+import Badge from '@/components/Badge.astro'
+import Button from '@/components/Button.astro'
+import Container from '@/components/Container.astro'
+
+export interface Props {
+  title?: string
+  body?: string
+  badges?: string[]
+  cta?: string
+  id?: string
+  href?: string
+}
+
+const { props } = Astro
+---
+
+<Container id={props.id}>
+  <div class='flex gap-6'>
+    <slot name='badges'>
+      {props.badges?.map((badge) => <Badge innerHtml={badge} />)}
+    </slot>
+  </div>
+
+  <div class='max-w-4xl mt-6 mb-12'>
+    <Text
+      tag={'h1'}
+      variant={'banner'}
+      class:list={'mb-4'}>
+      <slot name='title'><Fragment set:html={props.title} /></slot>
+    </Text>
+    <Text
+      tag={'p'}
+      variant={'body'}>
+      <slot name='body'><Fragment set:html={props.body} /></slot>
+    </Text>
+  </div>
+
+  <Button href={props.href}
+    ><slot name='cta'><Fragment set:html={props.cta} /></slot></Button
+  >
+</Container>

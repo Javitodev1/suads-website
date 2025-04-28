@@ -1,0 +1,15 @@
+---
+import Text from './Text.astro'
+
+export interface Props {
+  innerHtml?: string
+}
+
+const { props } = Astro
+---
+
+<Text
+  tag={'span'}
+  variant={'badge'}
+  ><slot><Fragment set:html={props.innerHtml} /></slot></Text
+>
