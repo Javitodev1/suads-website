@@ -1,47 +1,40 @@
 ---
 import '@/styles/global.css'
-import Header from '@/layouts/Header/Header.astro'
-import Footer from '@/layouts/Footer/Footer.astro'
+
+import type { IMetadata } from './types'
+
+import Metadata from './Metadata.astro'
+import Header from './Header/Header.astro'
+import Footer from './Footer/Footer.astro'
+
+import { ClientRouter } from 'astro:transitions'
+
+export interface Props extends IMetadata {}
+
+const { ...metadata } = Astro.props
 ---
 
 <!doctype html>
-<html lang='en'>
+<html
+  lang='es'
+  transition:name='root'
+  transition:animate='none'>
   <head>
-    <meta charset='UTF-8' />
-    <meta
-      name='viewport'
-      content='width=device-width'
-    />
-    <link
-      rel='icon'
-      type='image/svg+xml'
-      href='/favicon.svg'
-    />
-    <meta
-      name='generator'
-      content={Astro.generator}
-    />
-    <title>Suads Agency - Publicidad | Diseño Gráfico | Desarrollo Web</title>
+    <Metadata {...metadata} />
+    <ClientRouter />
   </head>
-  <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
 
-    <script
-      is:inline
-      src='https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js'
-    ></script>
+  <body class='bg-br-section'>
+    <Header />
+
+    <div
+      class='grid min-h-screen grid-rows-[1fr,auto]'
+      transition:animate='fade'>
+      <main>
+        <slot />
+      </main>
+
+      <Footer />
+    </div>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>

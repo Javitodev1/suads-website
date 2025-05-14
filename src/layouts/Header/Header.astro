@@ -1,67 +1,36 @@
 ---
+import Button from '@/components/Button.astro'
+import { Dropdown } from '@/components/Dropdown'
+
+import Logo from '@/assets/suads.svg'
 import { LINKS } from '@/data/links'
-import Text from '@/components/Text.astro'
-import Logo from '@/components/Logo.astro'
+
+import Navbar from './components/Navbar.astro'
+import NavBrand from './components/NavBrand.astro'
+import Hamburger from './components/Hamburger.astro'
+import NavUl from './components/NavUl.astro'
+import NavLi from './components/NavLi.astro'
 ---
 
-<header class='fixed top-0 w-full'>
-  <div class='flex justify-between items-center max-w-7xl mx-auto py-8'>
+<Navbar>
+  <NavBrand>
     <Logo />
+  </NavBrand>
 
-    <nav class='flex gap-9 items-center'>
-      <Text
-        tag={'a'}
-        variant={'badge'}
-        href={LINKS.root}
-        >Inicio</Text
-      >
+  <Hamburger id='hamburger' />
 
-      <details>
-        <summary>
-          <Text
-            tag={'a'}
-            variant={'badge'}
-            href={LINKS.services}
-            >Servicios</Text
-          >
-        </summary>
+  <NavUl id='navbar'>
+    <NavLi href={LINKS.root}>Home</NavLi>
 
-        <ul>
-          <li>
-            <Text
-              tag={'a'}
-              variant={'badge'}
-              href={LINKS.webdev}
-              >Desarrollo Web</Text
-            >
-          </li>
+    <Dropdown name='services'>
+      <Fragment slot="header">Servicios</Fragment>
+      <NavLi href={LINKS.webdev}>Desarrollo Web</NavLi>
+      <NavLi href={LINKS.ads}>Publicidad</NavLi>
+      <NavLi href={LINKS.design}>Diseño Gráfico</NavLi>
+    </Dropdown>
 
-          <li>
-            <Text
-              tag={'a'}
-              variant={'badge'}
-              href={LINKS.design}
-              >Diseño Gráfico</Text
-            >
-          </li>
+    <Button href={LINKS.contact}>Contacto</Button>
+  </NavUl>
+</Navbar>
 
-          <li>
-            <Text
-              tag={'a'}
-              variant={'badge'}
-              href={LINKS.ads}
-              >Publicidad</Text
-            >
-          </li>
-        </ul>
-      </details>
-
-      <Text
-        tag={'a'}
-        variant={'buttonSmall'}
-        href={LINKS.contact}
-        >Contacto</Text
-      >
-    </nav>
-  </div>
-</header>
+<script src='./lib/navbar.ts'></script>

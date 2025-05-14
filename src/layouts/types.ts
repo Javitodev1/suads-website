@@ -1,0 +1,1 @@
+export type { Props as IMetadata } from './Metadata.astro'

@@ -1,10 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '@/layouts/Layout.astro'
 import Services from '@/templates/services/Services.astro'
 
 import { Content } from '@/libs/content'
+import type { IMetadata } from '@/layouts/types'
+
+const metadata = {
+  title: "Suads Agency - Publicidad | Diseño Gráfico | Desarrollo Web",
+  description: "",
+  author: "Javier Fuentes",
+  keywords: "",
+  ogImage: "",
+  url: "",
+} satisfies IMetadata
 ---
 
-<Layout>
+<Layout {...metadata}>
   <Services content={Content.getAds()} />
 </Layout>

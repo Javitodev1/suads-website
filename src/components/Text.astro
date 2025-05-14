@@ -1,14 +1,15 @@
 ---
-const textStyles = {
-  banner: 'text-br-text text-br-banner font-br-title uppercase',
-  title: 'text-br-text text-br-title font-br-title uppercase',
-  bigNumber: 'text-br-text text-br-bignumber font-br-title',
-  body: 'text-br-text text-2xl font-br-body',
-  button: 'text-br-text text-xl font-br-body font-bold',
-  buttonSmall: 'text-br-text text-base font-br-body font-bold',
-  badge: 'text-br-text text-base font-br-body',
-  cardTitle: 'text-br-text text-2xl font-br-title',
-  cardBody: 'text-br-text text-lg font-br-body',
+export const textStyles = {
+  banner: 'text-br-text text-br-title md:text-br-banner font-br-title uppercase',
+  title: 'text-br-text text-br-title-sm md:text-br-title font-br-title uppercase',
+  bigNumber: 'text-br-text text-br-title-sm md:text-br-bignumber font-br-title',
+  bodyBanner: 'text-br-text text-sm md:text-2xl font-br-body',
+  body: 'text-br-text text-sm md:text-xl font-br-body',
+  button: 'text-br-text text-sm md:text-xl font-br-body font-bold',
+  buttonSmall: 'text-br-text text-xs md:text-base font-br-body font-bold',
+  badge: 'text-br-text text-xs md:text-base font-br-body',
+  cardTitle: 'text-br-text text-sm md:text-2xl font-br-title',
+  cardBody: 'text-br-text text-xs md:text-lg font-br-body',
 }
 
 type Variant = keyof typeof textStyles
