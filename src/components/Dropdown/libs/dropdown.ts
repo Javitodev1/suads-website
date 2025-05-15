@@ -23,8 +23,11 @@ function dropdownInit(container: Element) {
     offsetSkidding: 0,
     offsetDistance: 10,
     delay: 300,
-    onToggle: () => {
-      $iconArrow.classList.toggle('rotate-180')
+    onShow: () => {
+      $iconArrow.classList.add('rotate-180')
+    },
+    onHide: () => {
+      $iconArrow.classList.remove('rotate-180')
     },
   }
 

@@ -4,7 +4,7 @@ import type { ICard } from '@/types/content'
 import Container from '@/components/Container.astro'
 import Text from '@/components/Text.astro'
 import Badge from '@/components/Badge.astro'
-import Accordion from '@/components/Accordion/Accordion.astro'
+import { Accordion } from '@/components/Accordion'
 
 export interface Props {
   badge?: string
@@ -18,13 +18,15 @@ const { badge, title, cards } = Astro.props
 <Container>
   <Badge><slot name='badge'><Fragment set:html={badge} /></slot></Badge>
 
-  <Text variant={'title'} class='mt-6 mb-12'
+  <Text
+    variant={'title'}
+    class='mt-6 mb-12'
     ><slot name='title'><Fragment set:html={title} /></slot></Text
   >
 
-  <div class="flex gap-12">
+  <div class='flex gap-12'>
     <Accordion cards={cards} />
 
-    <div class="w-[550px] h-auto aspect-square shrink-0 bg-gray-300"></div>
+    <div class='w-[550px] h-auto aspect-square shrink-0 bg-gray-300'></div>
   </div>
 </Container>

@@ -1,0 +1,15 @@
+---
+export interface Props {
+  id: string
+}
+
+const { id } = Astro.props
+---
+
+<ul
+  id={id}
+  data-accordion='collapse'
+  data-active-classes='bg-white text-gray-900'
+  data-inactive-classes='text-gray-500'>
+  <slot />
+</ul>

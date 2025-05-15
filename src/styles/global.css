@@ -4,75 +4,72 @@
 
 @theme {
   /* Brand Text size */
-  --text-br-banner: 5.5rem;
-  --text-br-banner--line-height: 1.014;
+  --text-5xl: 5.5rem; /* 88px */
+  --text-5xl--line-height: 1;
 
-  --text-br-bignumber: 4rem;
-  --text-br-bignumber--line-height: 1.014;
+  --text-4xl: 4.375rem; /* 70px */
+  --text-4xl--line-height: 1;
 
-  --text-br-title: 2.5rem;
-  --text-br-title--line-height: 1.014;
+  --text-3xl: 2.5rem; /* 40px */
+  --text-3xl--line-height: 2.5rem;
 
-  --text-br-title-sm: 1.75rem;
-  --text-br-title-sm--line-height: 1.014;
+  --text-2xl: 1.75rem; /* 28px */
+  --text-2xl--line-height: 2rem;
 
-  --text-desktop-2xl: 88px;
-  --text-desktop-xl: 70px;
-  --text-desktop-lg: 40px;
-  --text-desktop-md: 24px;
-  --text-desktop-sm: 20px;
-  --text-desktop-xs: 16px;
+  --text-xl: 1.5rem; /* 24px */
+  --text-xl--line-height: 1.75rem;
 
-  --text-mobile-2xl: 40px;
-  --text-mobile-xl: 28px;
-  --text-mobile-lg: 24px;
-  --text-mobile-md: 14px;
-  --text-mobile-sm: 11px;
+  --text-lg: 1.25rem; /* 20px */
+  --text-lg--line-height: 1.5rem;
+
+  --text-md: 1rem; /* 16px */
+  --text-md--line-height: 1.25rem;
+
+  --text-sm: 0.875rem; /* 14px */
+  --text-sm--line-height: 1rem;
+
+  --text-xs: 0.688rem; /* 11px */
+  --text-xs--line-height: 1rem;
 
   /* Brand Font families */
-  --font-br-title: 'Bebas Neue', sans-serif;
-  --font-br-body: 'Roboto Variable', sans-serif;
-
-  --font-emphasis: 'Bebas Neue', sans-serif;
-  --font-normal: 'Roboto Variable', sans-serif;
+  --font-title: 'Bebas Neue', sans-serif;
+  --font-body: 'Roboto Variable', sans-serif;
 
   /* Brand Colors */
-  --color-br-text: #fff;
-  --color-br-section: #04060c;
-
-  --color-primary-50: #F1F9FE;
-  --color-primary-100: #E3F2FB;
-  --color-primary-200: #C1E5F6;
-  --color-primary-300: #89D2F0;
-  --color-primary-400: #4BBAE5;
-  --color-primary-500: #23A1D4;
-  --color-primary-600: #1582B4;
+  --color-primary-50: #f1f9fe;
+  --color-primary-100: #e3f2fb;
+  --color-primary-200: #c1e5f6;
+  --color-primary-300: #89d2f0;
+  --color-primary-400: #4bbae5;
+  --color-primary-500: #23a1d4;
+  --color-primary-600: #1582b4;
   --color-primary-700: #126792;
   --color-primary-800: #135879;
   --color-primary-900: #164964;
-  --color-primary-950: #0B2433;
+  --color-primary-950: #0b2433;
+  --color-primary-1000: #04060c;
 
-  --color-secondary-50: #FFF8EC;
-  --color-secondary-100: #FFF0D3;
-  --color-secondary-200: #FFDEA5;
-  --color-secondary-300: #FFC56D;
-  --color-secondary-400: #FFA032;
-  --color-secondary-500: #FF830A;
-  --color-secondary-600: #FF6A00;
-  --color-secondary-700: #CC4C02;
-  --color-secondary-800: #A13B0B;
-  --color-secondary-900: #82330C;
+  --color-secondary-50: #fff8ec;
+  --color-secondary-100: #fff0d3;
+  --color-secondary-200: #ffdea5;
+  --color-secondary-300: #ffc56d;
+  --color-secondary-400: #ffa032;
+  --color-secondary-500: #ff830a;
+  --color-secondary-600: #ff6a00;
+  --color-secondary-700: #cc4c02;
+  --color-secondary-800: #a13b0b;
+  --color-secondary-900: #82330c;
   --color-secondary-950: #461704;
 
-  --color-neutral-50: #FFFFFF;
-  --color-neutral-100: #EFEFEF;
-  --color-neutral-200: #DCDCDC;
-  --color-neutral-300: #BDBDBD;
+  --color-neutral-50: #ffffff;
+  --color-neutral-100: #efefef;
+  --color-neutral-200: #dcdcdc;
+  --color-neutral-300: #bdbdbd;
   --color-neutral-400: #989898;
-  --color-neutral-500: #7C7C7C;
+  --color-neutral-500: #7c7c7c;
   --color-neutral-600: #656565;
   --color-neutral-700: #525252;
   --color-neutral-800: #464646;
-  --color-neutral-900: #3D3D3D;
+  --color-neutral-900: #3d3d3d;
   --color-neutral-950: #292929;
 }

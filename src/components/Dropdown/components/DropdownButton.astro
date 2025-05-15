@@ -1,5 +1,6 @@
 ---
-import {textStyles} from '@/components/Text.astro'
+import Arrow from '@/assets/arrow.svg'
+import { textStyles } from '@/components/Text.astro'
 
 interface Props {
   id: string
@@ -15,23 +16,13 @@ const textClass = textStyles.badge
   data-dropdown-trigger
   data-dropdown-toggle={menuId}
   type='button'
-  class='inline-flex items-center'
+  class='inline-flex items-center gap-1'
   class:list={[textClass]}>
   <slot />
 
-  <svg
-    class='w-2.5 h-2.5 ms-3'
+  <Arrow
+    class='w-5 h-5'
     aria-hidden='true'
     data-dropdown-icon
-    xmlns='http://www.w3.org/2000/svg'
-    fill='none'
-    viewBox='0 0 10 6'>
-    <path
-      stroke='currentColor'
-      stroke-linecap='round'
-      stroke-linejoin='round'
-      stroke-width='2'
-      d='m1 1 4 4 4-4'
-    ></path>
-  </svg>
+  />
 </button>
