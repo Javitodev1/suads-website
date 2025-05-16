@@ -1,21 +1,19 @@
 ---
-import type { IMetadata } from '@/layouts/types'
-
-import Layout from '@/layouts/Layout.astro'
-import Home from '@/templates/home/Home.astro'
+import { Layout, type ILayout } from '@/layouts'
+import { Home } from '@/templates'
 
 import { Content } from '@/libs/content'
 
 const metadata = {
-  title: "Suads Agency - Publicidad | Diseño Gráfico | Desarrollo Web",
-  description: "",
-  author: "Javier Fuentes",
-  keywords: "",
-  ogImage: "",
-  url: "",
-} satisfies IMetadata
+  title: 'Suads Agency - Publicidad | Diseño Gráfico | Desarrollo Web',
+  description: '',
+  author: 'Javier Fuentes',
+  keywords: '',
+  ogImage: '',
+  url: '',
+} satisfies ILayout
 ---
 
 <Layout {...metadata}>
-  <Home content={Content.getHome()} />
+  <Home {...Content.getHome()} />
 </Layout>

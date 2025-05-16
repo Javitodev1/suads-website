@@ -1,9 +1,12 @@
 ---
 import Text from './Text.astro'
 
-interface Props {
+export interface ICard {
   title?: string
   body?: string
+}
+
+export interface Props extends ICard {
   class?: string
 }
 

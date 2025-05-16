@@ -1,15 +1,11 @@
 ---
 import '@/styles/global.css'
 
-import type { IMetadata } from './types'
-
-import Metadata from './Metadata.astro'
-import Header from './Header/Header.astro'
-import Footer from './Footer/Footer.astro'
+import * as Modules from './modules'
 
 import { ClientRouter } from 'astro:transitions'
 
-export interface Props extends IMetadata {}
+export interface Props extends Modules.IMetadata {}
 
 const { ...metadata } = Astro.props
 ---
@@ -20,12 +16,12 @@ const { ...metadata } = Astro.props
   transition:name='root'
   transition:animate='none'>
   <head>
-    <Metadata {...metadata} />
+    <Modules.Metadata {...metadata} />
     <ClientRouter />
   </head>
 
   <body class='bg-primary-1000'>
-    <Header />
+    <Modules.Header />
 
     <div
       class='grid min-h-screen grid-rows-[1fr,auto]'
@@ -34,7 +30,7 @@ const { ...metadata } = Astro.props
         <slot />
       </main>
 
-      <Footer />
+      <Modules.Footer />
     </div>
   </body>
 </html>

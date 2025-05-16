@@ -50,9 +50,11 @@ export interface Props {
   id?: string
   href?: string
   color?: TextColor
+  innerHTML?: string
 }
 
 const {
+  innerHTML,
   tag = 'p', // default to paragraph
   variant = 'body', // default to textMD variant
   class: className = '',
@@ -71,6 +73,6 @@ const baseClasses = textStyles[variant] || textStyles.body // Default to body if
   for={htmlFor}
   {...rest}>
   <slot name='left-icon' />
-  <slot />
+  <slot><Fragment set:html={innerHTML} /></slot>
   <slot name='right-icon' />
 </Tag>

@@ -1,16 +1,14 @@
 ---
-import type { IMetadata } from '@/layouts/types'
-import Layout from '../layouts/Layout.astro'
+import { Layout, type ILayout } from '@/layouts'
 
 const metadata = {
-  title: "Suads Agency - Publicidad | Diseño Gráfico | Desarrollo Web",
-  description: "",
-  author: "Javier Fuentes",
-  keywords: "",
-  ogImage: "",
-  url: "",
-} satisfies IMetadata
+  title: 'Suads Agency - Publicidad | Diseño Gráfico | Desarrollo Web',
+  description: '',
+  author: 'Javier Fuentes',
+  keywords: '',
+  ogImage: '',
+  url: '',
+} satisfies ILayout
 ---
 
-<Layout {...metadata}>
-</Layout>
+<Layout {...metadata} />

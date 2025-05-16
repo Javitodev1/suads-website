@@ -1,0 +1,1 @@
+export { default as Layout, type Props as ILayout } from './Layout.astro'

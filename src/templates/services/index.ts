@@ -1,0 +1,1 @@
+export { default as Services, type Props as IServices } from './Services.astro'

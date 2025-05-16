@@ -1,4 +1,4 @@
-import type { IHome, IService } from '@/types/content'
+import type { IHome, IServices } from '@/templates'
 
 import home from '@/data/inicio.json'
 import contact from '@/data/contacto.json'
@@ -10,26 +10,22 @@ import formContact from '@/data/form_contact.json'
 
 export class Content {
   static getHome(): IHome {
-    return home
+    return {...home, contact:formContact}
   }
 
   static getContact() {
     return contact
   }
 
-  static getWebdev(): IService {
-    return webdev
+  static getWebdev(): IServices {
+    return {...webdev, contact:formContact}
   }
 
-  static getDesign(): IService {
-    return design
+  static getDesign(): IServices {
+    return {...design, contact:formContact}
   }
 
-  static getAds(): IService {
-    return ads
-  }
-
-  static getFormContact() {
-    return formContact
+  static getAds(): IServices {
+    return {...ads, contact:formContact}
   }
 }

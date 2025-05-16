@@ -1,53 +1,58 @@
 ---
-import { Features } from '@/modules'
-
-import type { IHome } from '@/types/content'
+import { Features, type IFeatures } from '@/modules'
+import { Contact, type IContact } from '@/modules'
+import { LINKS } from '@/data/links'
 
 import * as Modules from './modules'
 
-import { LINKS } from '@/data/links'
-
-interface Props {
-  content: IHome
+export interface Props {
+  about?: Modules.IAbout
+  contact?: IContact
+  customers?: Modules.ICustomers
+  features?: IFeatures
+  hero?: Modules.IHero
+  services?: Modules.IServices
+  stats?: Modules.IStats
 }
 
-const { content } = Astro.props
+const { about, customers, features, hero, services, stats, contact } =
+  Astro.props
 ---
 
 {
-  content.hero && (
+  hero && (
     <Modules.Hero
       id='hero'
       href={LINKS.contact}
-      {...content.hero}
+      {...hero}
     />
   )
 }
 
 {
-  content.about && (
+  about && (
     <Modules.About
       id='about'
       href={LINKS.contact}
-      {...content.about}
+      {...about}
     />
   )
 }
 
 {
-  content.features && (
+  features && (
     <Features
       id='features'
-      {...content.features}
+      {...features}
     />
   )
 }
 
 {
-  content.customers && (
+  customers && (
     <Modules.Customers
       id='customers'
-      {...content.customers}>
+      {...customers}>
       <span>Noemi Cabana</span>
       <span>Lighthouse</span>
       <span>Amatista</span>
@@ -56,19 +61,28 @@ const { content } = Astro.props
 }
 
 {
-  content.services && (
+  services && (
     <Modules.Services
       id='services'
-      {...content.services}
+      {...services}
     />
   )
 }
 
 {
-  content.stats && (
+  stats && (
     <Modules.Stats
       id='stats'
-      {...content.stats}
+      {...stats}
+    />
+  )
+}
+
+{
+  contact && (
+    <Contact
+      id='contact'
+      {...contact}
     />
   )
 }

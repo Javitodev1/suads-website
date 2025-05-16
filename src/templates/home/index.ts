@@ -1,0 +1,1 @@
+export { default as Home, type Props as IHome } from './Home.astro'

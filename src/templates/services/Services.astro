@@ -1,24 +1,71 @@
 ---
-import { Features } from '@/modules'
-
-import type { IService } from '@/types/content'
+import { Features, type IFeatures } from '@/modules'
+import { Contact, type IContact } from '@/modules'
 
 import * as Modules from './modules'
 
-
-interface Props {
-  content: IService
+export interface Props {
+  contact?: IContact
+  features?: IFeatures
+  hero?: Modules.IHero
+  howWork?: Modules.IHowWork
+  portfolio?: Modules.IPortfolio
+  whyUs?: IFeatures
 }
 
-const { content } = Astro.props
+const { features, hero, howWork, portfolio, whyUs, contact } = Astro.props
 ---
 
-{content.hero && <Modules.Hero {...content.hero} />}
+{
+  hero && (
+    <Modules.Hero
+      id='hero'
+      {...hero}
+    />
+  )
+}
 
-{content.features && <Features {...content.features} />}
+{
+  features && (
+    <Features
+      id='features'
+      {...features}
+    />
+  )
+}
 
-{content.howWork && <Modules.HowWork {...content.howWork} />}
+{
+  howWork && (
+    <Modules.HowWork
+      id='how-works'
+      {...howWork}
+    />
+  )
+}
 
-{content.whyUs && <Features {...content.whyUs} />}
+{
+  whyUs && (
+    <Features
+      id='why-us'
+      {...whyUs}
+    />
+  )
+}
 
-{content.portfolio && <Modules.Portfolio {...content.portfolio} />}
+{
+  portfolio && (
+    <Modules.Portfolio
+      id='portfolio'
+      {...portfolio}
+    />
+  )
+}
+
+{
+  contact && (
+    <Contact
+      id='contact'
+      {...contact}
+    />
+  )
+}

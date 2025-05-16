@@ -6,15 +6,16 @@ const containerStyles = {
 
 type Variant = keyof typeof containerStyles
 
-interface Props {
+export interface Props {
   id?: string
   class?: string
+  containerClass?: string
   variant?: Variant
   tag?: 'section' | 'header' | 'footer' | 'div'
 }
 
 const { props } = Astro
-const { tag: Tag = 'section', variant = 'normal' } = props
+const { containerClass, tag: Tag = 'section', variant = 'normal' } = props
 
 const style = containerStyles[variant] || containerStyles.normal
 ---
@@ -26,7 +27,7 @@ const style = containerStyles[variant] || containerStyles.normal
   <slot name='before' />
   <div
     class='px-4 md:px-0 md:max-w-7xl md:mx-auto'
-    class:list={[style]}>
+    class:list={[style, containerClass]}>
     <slot />
   </div>
   <slot name='after' />

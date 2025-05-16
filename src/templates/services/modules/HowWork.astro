@@ -1,21 +1,20 @@
 ---
-import type { ICard } from '@/types/content'
-
 import Container from '@/components/Container.astro'
 import Text from '@/components/Text.astro'
 import Badge from '@/components/Badge.astro'
-import { Accordion } from '@/components/Accordion'
+import { Accordion, type AccordionCard } from '@/components'
 
 export interface Props {
+  id?: string
   badge?: string
   title?: string
-  cards?: ICard[]
+  cards?: AccordionCard[]
 }
 
-const { badge, title, cards } = Astro.props
+const { id, badge, title, cards } = Astro.props
 ---
 
-<Container>
+<Container id={id}>
   <Badge><slot name='badge'><Fragment set:html={badge} /></slot></Badge>
 
   <Text

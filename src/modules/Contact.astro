@@ -1,0 +1,30 @@
+---
+import { Badge, ContactForm, Container, Text } from '@/components'
+
+export interface Props {
+  id?: string
+  badge?: string
+  title?: string
+  body?: string
+}
+
+const { id, badge, title, body } = Astro.props
+---
+
+<Container
+  id={id}
+  containerClass='flex gap-6'>
+  <div class="max-w-2xl flex flex-col gap-6">
+    <Badge innerHtml={badge} />
+    <Text
+      tag={'h2'}
+      variant={'banner'}
+      innerHTML={title}
+    />
+    <Text innerHTML={body} />
+  </div>
+
+  <div class="grow">
+    <ContactForm />
+  </div>
+</Container>
