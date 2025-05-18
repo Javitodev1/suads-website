@@ -9,3 +9,4 @@ export { default as Container, type Props as IContainer } from './Container.astr
 export { default as StatCard, type IStatCard } from './StatCard.astro'
 export { default as Summary, type Props as ISummary } from './Summary.astro'
 export { default as Text, type Props as IText, textStyles, textColors } from './Text.astro'
+export { default as Whatsapp, type Props as IWhatsapp } from './Whatsapp.astro'
