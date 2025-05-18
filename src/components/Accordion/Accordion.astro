@@ -2,17 +2,19 @@
 import { AccordionContainer } from './components'
 import { AccordionItem, type IAccordionItem } from './components'
 
-
 export type AccordionCard = Pick<IAccordionItem, 'title' | 'body'>
 
 export interface Props {
   cards?: AccordionCard[]
+  class?: string
 }
 
-const { cards = [] } = Astro.props
+const { cards = [], class: className } = Astro.props
 ---
 
-<AccordionContainer id='accordion'>
+<AccordionContainer
+  id='accordion'
+  class={className}>
   {
     cards.map(({ body, title }, index) => (
       <AccordionItem

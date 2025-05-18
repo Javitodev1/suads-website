@@ -47,5 +47,7 @@ function dropdownInit(container: Element) {
 }
 
 document.addEventListener('astro:page-load', () => {
-  document.querySelectorAll('[data-dropdown]').forEach((container) => dropdownInit(container))
+  document
+    .querySelectorAll('[data-dropdown]')
+    .forEach((container) => dropdownInit(container))
 })

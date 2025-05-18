@@ -1,6 +1,6 @@
 ---
 import Arrow from '@/assets/arrow.svg'
-import { textStyles } from '@/components/Text.astro'
+import { textStyles, textColors } from '@/components/Text.astro'
 
 interface Props {
   id: string
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { id, menuId } = Astro.props
-const textClass = textStyles.badge
+const textClass = [textStyles.badge, textColors.neutral]
 ---
 
 <button
@@ -17,7 +17,7 @@ const textClass = textStyles.badge
   data-dropdown-toggle={menuId}
   type='button'
   class='inline-flex items-center gap-1'
-  class:list={[textClass]}>
+  class:list={textClass}>
   <slot />
 
   <Arrow

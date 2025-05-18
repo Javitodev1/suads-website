@@ -22,10 +22,8 @@ function accordionInit(accordionEl: HTMLElement) {
   // options with default values
   const options: AccordionOptions = {
     alwaysOpen: false,
-    activeClasses: 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white',
-    inactiveClasses: 'text-gray-500 dark:text-gray-400',
   }
-
+  
   /*
    * accordionEl: HTML element (required)
    * accordionItems: array of accordion item objects (required)

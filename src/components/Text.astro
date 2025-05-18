@@ -67,6 +67,7 @@ const {
 const Tag: TagType = tag !== 'p' ? tag : variantToTagMap[variant] || tag
 
 const colorStyles = textColors[color]
+
 // Get the base classes for the variant
 const baseClasses = textStyles[variant] || textStyles.body // Default to body if not found
 ---

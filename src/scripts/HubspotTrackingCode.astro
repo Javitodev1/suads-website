@@ -1,0 +1,16 @@
+---
+const IS_PRODUCTION = !import.meta.env.DEV
+---
+
+{
+  IS_PRODUCTION && (
+    <script
+      is:inline
+      type='text/javascript'
+      id='hs-script-loader'
+      async
+      defer
+      src='//js.hs-scripts.com/49867859.js'
+    />
+  )
+}

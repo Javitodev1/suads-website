@@ -3,7 +3,9 @@ import '@/styles/global.css'
 
 import * as Modules from './modules'
 
+import HubspotTrackingCode from '@/scripts/HubspotTrackingCode.astro'
 import { ClientRouter } from 'astro:transitions'
+import { Font } from 'astro:assets'
 
 export interface Props extends Modules.IMetadata {}
 
@@ -16,6 +18,9 @@ const { ...metadata } = Astro.props
   transition:name='root'
   transition:animate='none'>
   <head>
+    <Font cssVariable='--font-bebas-neue' preload />
+    <Font cssVariable='--font-roboto' preload />
+
     <Modules.Metadata {...metadata} />
     <ClientRouter />
   </head>
@@ -32,5 +37,7 @@ const { ...metadata } = Astro.props
 
       <Modules.Footer />
     </div>
+
+    <HubspotTrackingCode />
   </body>
 </html>
