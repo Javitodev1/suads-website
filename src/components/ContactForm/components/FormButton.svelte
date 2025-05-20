@@ -1,10 +1,16 @@
-<script>
-  export let text = "Submit";
+<script lang="ts">
+  interface Props {
+    value: string
+    textClasses?: string
+    onsubmit?: () => void
+  }
+
+  let { value, textClasses, onsubmit }: Props = $props()
 </script>
 
-<button
+<input
   type="submit"
-  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
->
-  {text}
-</button>
+  class="{textClasses} focus:ring-4 focus:outline-none rounded-lg w-full sm:w-auto px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800"
+  {value}
+  {onsubmit}
+/>

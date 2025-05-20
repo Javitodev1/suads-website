@@ -1,6 +1,15 @@
-<script>
+<script lang="ts">
+  interface Props {
+    name: string
+    label: string
+    type?: 'email' | 'text' | 'tel' | 'url'
+    bindValue: string
+    placeholder?: string
+    fontClass?: string
+    colorClass?: string
+  }
+
   let {
-    id,
     name,
     label,
     type = 'text',
@@ -8,16 +17,18 @@
     placeholder = ' ',
     fontClass = 'text-md font-body',
     colorClass = 'text-neutral-200 border-neutral-600 focus:border-primary-450',
-  } = $props()
+  }: Props = $props()
+
+  const id = name
 </script>
 
 <div class="relative z-0 w-full mb-5 group">
   <input
-    type={type}
-    name={name}
-    id={id}
+    {type}
+    {name}
+    {id}
     class="{fontClass} {colorClass} block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 peer"
-    placeholder={placeholder}
+    {placeholder}
     required
   />
   <label

@@ -25,6 +25,6 @@ const { id, badge, title, body } = Astro.props
   </div>
 
   <div class="grow">
-    <ContactForm />
+    <ContactForm client:visible="svelte"/>
   </div>
 </Container>

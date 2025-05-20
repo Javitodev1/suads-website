@@ -73,4 +73,31 @@
   --color-neutral-800: #464646;
   --color-neutral-900: #3d3d3d;
   --color-neutral-950: #292929;
+
+  --primary-gradient: 177.36deg, #38b6ff 16%, #d4edf7 71%;
+  --secondary-gradient: 163.28deg, #ff6a00 0%, #ffa666 100%;
+  --banner-gradient: 91deg, #afdcfb 0%, #feffff 58%, #afdcfb 100%;
+
+  --animate-wiggle: wiggle 300ms ease-in-out;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+  }
+
+  --animate-shine: shine 10s ease-out infinite;
+  @keyframes shine {
+  0%, 85% {
+    left: -50%;
+    top: -50%;
+  }
+  100% {
+    left: 150%;
+    top: 150%;
+  }
+}
 }

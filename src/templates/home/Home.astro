@@ -3,6 +3,8 @@ import { Features, type IFeatures } from '@/modules'
 import { Contact, type IContact } from '@/modules'
 import { LINKS } from '@/data/links'
 
+import heroBgImage from '@/assets/home/hero.webp'
+
 import * as Modules from './modules'
 
 export interface Props {
@@ -24,6 +26,7 @@ const { about, customers, features, hero, services, stats, contact } =
     <Modules.Hero
       id='hero'
       href={LINKS.contact}
+      bgImage={heroBgImage.src}
       {...hero}
     />
   )

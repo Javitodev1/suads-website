@@ -3,14 +3,15 @@ import '@/styles/global.css'
 
 import * as Modules from './modules'
 
-import HubspotTrackingCode from '@/scripts/HubspotTrackingCode.astro'
-import { Whatsapp, type IWhatsapp } from '@/components'
 import { ClientRouter } from 'astro:transitions'
 import { Font } from 'astro:assets'
+
+import { Whatsapp, type IWhatsapp } from '@/components'
 
 export interface Props extends Modules.IMetadata {}
 
 const { ...metadata } = Astro.props
+
 const whatsappData = {
   phone: '',
   message: '',
@@ -45,6 +46,6 @@ const whatsappData = {
 
     <Whatsapp {...whatsappData} />
 
-    <HubspotTrackingCode />
+    <Modules.Scripts />
   </body>
 </html>

@@ -13,12 +13,21 @@ export interface Props {
   cta?: string
   id?: string
   href?: string
+  bgImage?: string
 }
 
 const { props } = Astro
 ---
 
-<Container id={props.id}>
+<Container id={props.id} containerClass='relative z-20 min-h-screen'>
+  <picture slot="before">
+    <img
+      src={props.bgImage}
+      alt='rocket suads'
+      class='size-full object-center object-cover absolute top-0 left-0'
+    />
+  </picture>
+
   <div class='flex gap-6'>
     <Badge
       ><slot name='badge_ads'><Fragment set:html={props.badge_ads} /></slot
@@ -39,6 +48,7 @@ const { props } = Astro
   <div class='max-w-4xl mt-6 mb-12'>
     <Text
       variant={'banner'}
+      color={'bannerGradient'}
       class='mb-4'>
       <slot name='title'><Fragment set:html={props.title} /></slot>
     </Text>

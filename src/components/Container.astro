@@ -8,18 +8,19 @@ type Variant = keyof typeof containerStyles
 
 export interface Props {
   id?: string
+  bgImage?: string
   class?: string
   containerClass?: string
-  variant?: Variant
   tag?: 'section' | 'header' | 'footer' | 'div' | 'aside'
+  variant?: Variant
 }
 
 const {
   id,
   class: className,
   containerClass,
-  tag: Tag = 'section',
   variant = 'normal',
+  tag: Tag = 'section',
 } = Astro.props
 
 const style = containerStyles[variant] || containerStyles.normal
@@ -30,10 +31,12 @@ const style = containerStyles[variant] || containerStyles.normal
   class='bg-primary-1000'
   class:list={[className]}>
   <slot name='before' />
+
   <div
     class='px-4 md:px-0 md:max-w-7xl md:mx-auto'
     class:list={[style, containerClass]}>
     <slot />
   </div>
+
   <slot name='after' />
 </Tag>
