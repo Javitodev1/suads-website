@@ -1,9 +1,8 @@
 ---
 import { Features, type IFeatures } from '@/modules'
 import { Contact, type IContact } from '@/modules'
+import { Hero, type IHero } from '@/modules'
 import { LINKS } from '@/data/links'
-
-import heroBgImage from '@/assets/home/hero.webp'
 
 import * as Modules from './modules'
 
@@ -12,7 +11,7 @@ export interface Props {
   contact?: IContact
   customers?: Modules.ICustomers
   features?: IFeatures
-  hero?: Modules.IHero
+  hero?: IHero
   services?: Modules.IServices
   stats?: Modules.IStats
 }
@@ -23,10 +22,9 @@ const { about, customers, features, hero, services, stats, contact } =
 
 {
   hero && (
-    <Modules.Hero
+    <Hero
       id='hero'
       href={LINKS.contact}
-      bgImage={heroBgImage.src}
       {...hero}
     />
   )

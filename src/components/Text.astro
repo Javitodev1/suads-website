@@ -12,11 +12,14 @@ export const textStyles = {
 }
 
 export const textColors = {
-  bannerGradient: 'bg-clip-text text-transparent bg-clip-text text-transparent bg-linear-(--banner-gradient)',
-  primaryGradient: 'bg-clip-text text-transparent bg-clip-text text-transparent bg-linear-(--primary-gradient)',
-  secondaryGradient: 'bg-clip-text text-transparent bg-clip-text text-transparent bg-linear-(--secondary-gradient)',
+  badgeGradient: 'bg-clip-text text-transparent bg-clip-text text-transparent bg-linear-(--gradient-special-badge)',
+  textGradient: 'bg-clip-text text-transparent bg-clip-text text-transparent bg-linear-(--gradient-special-text)',
+  titleGradient: 'bg-clip-text text-transparent bg-clip-text text-transparent bg-linear-(--gradient-special-title)',
+  primaryGradient: 'bg-clip-text text-transparent bg-clip-text text-transparent bg-linear-(--gradient-primary)',
+  secondaryGradient: 'bg-clip-text text-transparent bg-clip-text text-transparent bg-linear-(--gradient-secondary)',
   neutral: 'text-neutral-50',
-  primary: 'text-primary-400',
+  primary: 'text-primary',
+  secondary: 'text-secondary',
   none: '',
 }
 
@@ -46,6 +49,13 @@ const variantToTagMap: Partial<Record<Variant, TagType>> = {
   cardTitle: 'h3',
 }
 
+const variantToColorMap: Partial<Record<Variant, Color>> = {
+  banner: 'textGradient',
+  title: 'titleGradient',
+  body: 'neutral',
+  bodyBanner: 'primary',
+}
+
 export interface Props {
   tag?: TagType
   variant?: Variant
@@ -67,9 +77,11 @@ const {
   ...rest
 } = Astro.props
 
+// Modify default tag & color by variant, otherwise, return the prop
 const Tag: TagType = tag !== 'p' ? tag : variantToTagMap[variant] || tag
+const variantColor: Color = color !== 'neutral' ? color : variantToColorMap[variant] || color
 
-const colorStyles = textColors[color]
+const colorStyles = textColors[variantColor]
 
 // Get the base classes for the variant
 const baseClasses = textStyles[variant] || textStyles.body // Default to body if not found

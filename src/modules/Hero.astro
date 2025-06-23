@@ -11,33 +11,53 @@ export interface Props {
   cta?: string
   id?: string
   href?: string
+  bgDesktop: ImageMetadata
+  bgMobile: ImageMetadata
 }
 
-const { props } = Astro
+const { title, body, badges, cta, id, href, bgDesktop, bgMobile } = Astro.props
 ---
 
-<Container id={props.id}>
-  <div class='flex gap-6'>
-    <slot name='badges'>
-      {props.badges?.map((badge) => <Badge innerHtml={badge} />)}
-    </slot>
+<Container
+  id={id}
+  class='relative min-h-screen w-full'>
+  <div
+    class='absolute top-0 left-0 size-full'
+    slot='before'>
+    <picture>
+      <source
+        media='(max-width: 640px)'
+        srcset={bgMobile.src}
+      />
+      <img
+        src={bgDesktop.src}
+        alt='Suads background rocket image'
+        class='object-center object-cover size-full'
+      />
+    </picture>
   </div>
 
-  <div class='max-w-4xl mt-6 mb-12'>
-    <Text
-      tag={'h1'}
-      variant={'banner'}
-      class:list={'mb-4'}>
-      <slot name='title'><Fragment set:html={props.title} /></slot>
-    </Text>
-    <Text
-      tag={'p'}
-      variant={'body'}>
-      <slot name='body'><Fragment set:html={props.body} /></slot>
-    </Text>
-  </div>
+  <div
+    slot='after'
+    class='absolute top-0 left-0 md:size-full'>
+    <div class='px-4 md:px-0 md:max-w-7xl md:mx-auto pt-40'>
+      <div class='flex gap-6 flex-wrap'>
+        {badges?.map((badge) => <Badge innerHtml={badge} />)}
+      </div>
 
-  <Button href={props.href}
-    ><slot name='cta'><Fragment set:html={props.cta} /></slot></Button
-  >
+      <div class='max-w-4xl mt-6 mb-12 space-y-4'>
+        <Text variant={'banner'}>
+          <slot name='title'><Fragment set:html={title} /></slot>
+        </Text>
+
+        <Text variant={'bodyBanner'}>
+          <slot name='body'><Fragment set:html={body} /></slot>
+        </Text>
+      </div>
+
+      <Button href={href}>
+        <slot name='cta'><Fragment set:html={cta} /></slot>
+      </Button>
+    </div>
+  </div>
 </Container>

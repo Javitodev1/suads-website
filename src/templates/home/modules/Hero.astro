@@ -13,53 +13,54 @@ export interface Props {
   cta?: string
   id?: string
   href?: string
-  bgImage?: string
+  bgDesktop?: ImageMetadata
+  bgMobile?: ImageMetadata
 }
 
-const { props } = Astro
+const {
+  title,
+  body,
+  badge_ads,
+  badge_webdev,
+  badge_design,
+  cta,
+  id,
+  href,
+} = Astro.props
 ---
 
-<Container id={props.id} containerClass='relative z-20 min-h-screen'>
-  <picture slot="before">
-    <img
-      src={props.bgImage}
-      alt='rocket suads'
-      class='size-full object-center object-cover absolute top-0 left-0'
-    />
-  </picture>
-
+<Container
+  id={id}
+  containerClass='relative z-20 md:min-h-screen'>
   <div class='flex gap-6'>
     <Badge
-      ><slot name='badge_ads'><Fragment set:html={props.badge_ads} /></slot
+      ><slot name='badge_ads'><Fragment set:html={badge_ads} /></slot></Badge
+    >
+    <Badge
+      ><slot name='badge_design'><Fragment set:html={badge_design} /></slot
       ></Badge
     >
     <Badge
-      ><slot name='badge_design'
-        ><Fragment set:html={props.badge_design} /></slot
-      ></Badge
-    >
-    <Badge
-      ><slot name='badge_webdev'
-        ><Fragment set:html={props.badge_webdev} /></slot
+      ><slot name='badge_webdev'><Fragment set:html={badge_webdev} /></slot
       ></Badge
     >
   </div>
 
-  <div class='max-w-4xl mt-6 mb-12'>
+  <div class='max-w-xs md:max-w-4xl mt-6 mb-12 text-balance'>
     <Text
       variant={'banner'}
-      color={'bannerGradient'}
+      color={'textGradient'}
       class='mb-4'>
-      <slot name='title'><Fragment set:html={props.title} /></slot>
+      <slot name='title'><Fragment set:html={title} /></slot>
     </Text>
     <Text
       color={'primary'}
       variant={'bodyBanner'}>
-      <slot name='body'><Fragment set:html={props.body} /></slot>
+      <slot name='body'><Fragment set:html={body} /></slot>
     </Text>
   </div>
 
-  <Button href={props.href}
-    ><slot name='cta'><Fragment set:html={props.cta} /></slot></Button
+  <Button href={href}
+    ><slot name='cta'><Fragment set:html={cta} /></slot></Button
   >
 </Container>

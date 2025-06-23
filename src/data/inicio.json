@@ -2,6 +2,7 @@
   "hero": {
     "title": "Hacemos  tu marca  la opción favorita de tus clientes",
     "body": "Estrategias innovadoras para conectar, impactar y fidelizar.",
+    "badges": ["Publicidad", "Diseño Grafico", "Desarrollo Web"],
     "badge_ads": "Publicidad",
     "badge_design": "Diseño Grafico",
     "badge_webdev": "Desarrollo Web",

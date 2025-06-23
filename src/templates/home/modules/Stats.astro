@@ -9,21 +9,34 @@ export interface Props {
   title?: string
   cards?: ICard[]
   id?: string
+  image: ImageMetadata
 }
 
-const { props } = Astro
+const { title, id, image, cards = [] } = Astro.props
 ---
 
-<Container id={props.id}>
+<Container
+  id={id}
+  class='relative'
+  containerClass='relative'>
+  <div
+    slot='before'
+    class='absolute top-0 right-0'>
+    <img
+      src={image.src}
+      alt=''
+    />
+  </div>
+
   <div class='max-w-3xl'>
     <Text
       tag={'h2'}
       variant={'title'}>
-      <slot name='title'><Fragment set:html={props.title} /></slot>
+      <slot name='title'><Fragment set:html={title} /></slot>
     </Text>
 
-    <div class='mt-24 grid grid-cols-2 gap-24'>
-      {props.cards?.map((props) => <StatCard {...props} />)}
+    <div class='mt-24 grid grid-cols-2 grid-rows-2 gap-24'>
+      {cards.map((props) => <StatCard {...props} />)}
     </div>
   </div>
 </Container>

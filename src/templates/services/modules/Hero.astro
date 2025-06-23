@@ -16,6 +16,7 @@ const { props } = Astro
     <Text
       tag={'h1'}
       variant={'banner'}
+      color={'textGradient'}
       class='mb-4'>
       <slot name='title'><Fragment set:html={props.title} /></slot>
     </Text>

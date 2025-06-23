@@ -5,11 +5,16 @@ export interface Props {
   innerHtml?: string
 }
 
-const { props } = Astro
+const { innerHtml } = Astro.props
 ---
 
-<Text
-  tag={'span'}
-  variant={'badge'}
-  ><slot><Fragment set:html={props.innerHtml} /></slot></Text
->
+<div class='bg-linear-(--gradient-special-stroke) p-0.5 rounded-full inline-block'>
+  <div class='bg-primary-1000 px-6 py-1 rounded-full'>
+    <Text
+      variant={'badge'}
+      color={'badgeGradient'}
+      class='text-nowrap'
+      ><slot><Fragment set:html={innerHtml} /></slot></Text
+    >
+  </div>
+</div>

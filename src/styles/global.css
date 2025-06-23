@@ -36,6 +36,7 @@
   --text-xs--line-height: 1rem;
 
   /* Brand Colors */
+  --color-primary: #38b6ff;
   --color-primary-50: #f1f9fe;
   --color-primary-100: #e3f2fb;
   --color-primary-200: #c1e5f6;
@@ -50,6 +51,19 @@
   --color-primary-950: #0b2433;
   --color-primary-1000: #04060c;
 
+  --color-picton-blue-50: #eff8ff;
+  --color-picton-blue-100: #dff0ff;
+  --color-picton-blue-200: #b8e3ff;
+  --color-picton-blue-300: #78cdff;
+  --color-picton-blue-400: #38b6ff;
+  --color-picton-blue-500: #069af1;
+  --color-picton-blue-600: #007ace;
+  --color-picton-blue-700: #0061a7;
+  --color-picton-blue-800: #02528a;
+  --color-picton-blue-900: #084572;
+  --color-picton-blue-950: #062b4b;
+
+  --color-secondary: #ff6a00;
   --color-secondary-50: #fff8ec;
   --color-secondary-100: #fff0d3;
   --color-secondary-200: #ffdea5;
@@ -74,24 +88,22 @@
   --color-neutral-900: #3d3d3d;
   --color-neutral-950: #292929;
 
-  --primary-gradient: 177.36deg, #38b6ff 16%, #d4edf7 71%;
-  --secondary-gradient: 163.28deg, #ff6a00 0%, #ffa666 100%;
-  --banner-gradient: 91deg, #afdcfb 0%, #feffff 58%, #afdcfb 100%;
+  --gradient-primary: 177.36deg, #38b6ff 16%, #d4edf7 71%;
+  --gradient-secondary: 163.28deg, #ff6a00 0%, #ffa666 100%;
+  --gradient-special-text: 91deg, #afdcfb 0%, #feffff 58%, #afdcfb 100%;
+  --gradient-special-title: 91deg, #D4EDF7 0%, #f1f9fe 58%, #D4EDF7 100%;
+  --gradient-special-badge: 90deg, #82FFFF -28.21%, #ABD1E8 42.63%, #82FFFF 113.46%;
+  --gradient-special-stroke: 90deg, #38b6ff82 0%, #b1e2f8 54%, #38b6ff82 100%;
 
-  --animate-wiggle: wiggle 300ms ease-in-out;
-  @keyframes wiggle {
-    0%,
-    100% {
-      transform: rotate(-10deg);
-    }
-    50% {
-      transform: rotate(10deg);
-    }
-  }
+  --shadow-to-r: 10px 0px 32px;
 
+  --animate-wiggle: wiggle 10s ease-in-out infinite;
   --animate-shine: shine 10s ease-out infinite;
-  @keyframes shine {
-  0%, 85% {
+}
+
+@keyframes shine {
+  0%,
+  85% {
     left: -50%;
     top: -50%;
   }
@@ -100,4 +112,25 @@
     top: 150%;
   }
 }
+
+@keyframes wiggle {
+  0%,
+  88% {
+    transform: none;
+  }
+  89% {
+    transform: rotate(-10deg);
+  }
+  90% {
+    transform: rotate(10deg);
+  }
+  91% {
+    transform: rotate(-5deg);
+  }
+  92% {
+    transform: rotate(5deg);
+  }
+  93% {
+    transform: none;
+  }
 }
