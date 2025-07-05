@@ -11,31 +11,15 @@ export interface Props {
   cta?: string
   id?: string
   href?: string
-  bgDesktop: ImageMetadata
-  bgMobile: ImageMetadata
 }
 
-const { title, body, badges, cta, id, href, bgDesktop, bgMobile } = Astro.props
+const { title, body, badges, cta, id, href } = Astro.props
 ---
 
 <Container
   id={id}
   class='relative min-h-screen w-full'>
-  <div
-    class='absolute top-0 left-0 size-full'
-    slot='before'>
-    <picture>
-      <source
-        media='(max-width: 640px)'
-        srcset={bgMobile.src}
-      />
-      <img
-        src={bgDesktop.src}
-        alt='Suads background rocket image'
-        class='object-center object-cover size-full'
-      />
-    </picture>
-  </div>
+  <slot name='before' />
 
   <div
     slot='after'
@@ -60,4 +44,6 @@ const { title, body, badges, cta, id, href, bgDesktop, bgMobile } = Astro.props
       </Button>
     </div>
   </div>
+
+  <slot name='after' />
 </Container>

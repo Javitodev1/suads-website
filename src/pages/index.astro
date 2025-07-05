@@ -1,8 +1,6 @@
 ---
 import { Layout, type ILayout } from '@/layouts'
-import { Home } from '@/templates'
-
-import { Content } from '@/libs/content'
+import { Home, getHomeContent } from '@/templates'
 
 const metadata = {
   title: 'Suads Agency - Publicidad | Diseño Gráfico | Desarrollo Web',
@@ -12,8 +10,10 @@ const metadata = {
   ogImage: '',
   url: '',
 } satisfies ILayout
+
+const homeContent = getHomeContent()
 ---
 
 <Layout {...metadata}>
-  <Home {...Content.getHome()} />
+  <Home {...homeContent} />
 </Layout>

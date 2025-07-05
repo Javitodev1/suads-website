@@ -1,66 +1,42 @@
 ---
-import Text from '@/components/Text.astro'
-import Badge from '@/components/Badge.astro'
-import Button from '@/components/Button.astro'
-import Container from '@/components/Container.astro'
+import DefaultHero from '@/modules/Hero.astro'
+import type { IHero } from '@/modules'
 
-export interface Props {
-  title?: string
-  body?: string
-  badge_ads?: string
-  badge_webdev?: string
-  badge_design?: string
-  cta?: string
-  id?: string
-  href?: string
-  bgDesktop?: ImageMetadata
-  bgMobile?: ImageMetadata
+export interface Props extends IHero {
+  bgDesktop: ImageMetadata
+  bgMobile: ImageMetadata
 }
 
-const {
-  title,
-  body,
-  badge_ads,
-  badge_webdev,
-  badge_design,
-  cta,
-  id,
-  href,
-} = Astro.props
+const { bgDesktop, bgMobile } = Astro.props
 ---
 
-<Container
-  id={id}
-  containerClass='relative z-20 md:min-h-screen'>
-  <div class='flex gap-6'>
-    <Badge
-      ><slot name='badge_ads'><Fragment set:html={badge_ads} /></slot></Badge
-    >
-    <Badge
-      ><slot name='badge_design'><Fragment set:html={badge_design} /></slot
-      ></Badge
-    >
-    <Badge
-      ><slot name='badge_webdev'><Fragment set:html={badge_webdev} /></slot
-      ></Badge
-    >
+<DefaultHero {...Astro.props}>
+  <div
+    class='absolute top-0 left-0 size-full'
+    slot='before'>
+    <picture>
+      <source
+        media='(max-width: 640px)'
+        srcset={bgMobile.src}
+      />
+      <img
+        src={bgDesktop.src}
+        alt='Suads background rocket image'
+        class='object-center object-cover size-full mask-fade'
+      />
+    </picture>
   </div>
+</DefaultHero>
 
-  <div class='max-w-xs md:max-w-4xl mt-6 mb-12 text-balance'>
-    <Text
-      variant={'banner'}
-      color={'textGradient'}
-      class='mb-4'>
-      <slot name='title'><Fragment set:html={title} /></slot>
-    </Text>
-    <Text
-      color={'primary'}
-      variant={'bodyBanner'}>
-      <slot name='body'><Fragment set:html={body} /></slot>
-    </Text>
-  </div>
+<style>
+  .mask-fade {
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
 
-  <Button href={href}
-    ><slot name='cta'><Fragment set:html={cta} /></slot></Button
-  >
-</Container>
+    /* For better browser support */
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+  }
+</style>

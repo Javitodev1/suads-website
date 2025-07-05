@@ -1,7 +1,6 @@
 ---
 import { Features, type IFeatures } from '@/modules'
 import { Contact, type IContact } from '@/modules'
-import { Hero, type IHero } from '@/modules'
 import { LINKS } from '@/data/links'
 
 import * as Modules from './modules'
@@ -11,7 +10,7 @@ export interface Props {
   contact?: IContact
   customers?: Modules.ICustomers
   features?: IFeatures
-  hero?: IHero
+  hero?: Modules.IHero
   services?: Modules.IServices
   stats?: Modules.IStats
 }
@@ -22,7 +21,7 @@ const { about, customers, features, hero, services, stats, contact } =
 
 {
   hero && (
-    <Hero
+    <Modules.Hero
       id='hero'
       href={LINKS.contact}
       {...hero}

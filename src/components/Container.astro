@@ -1,10 +1,11 @@
 ---
-const containerStyles = {
-  normal: 'py-32',
-  small: 'py-16',
+const wrapperStyles = {
+  normal: 'py-16 md:py-32',
+  small: 'py-8 md:py-16',
+  none: '',
 }
 
-type Variant = keyof typeof containerStyles
+type Variant = keyof typeof wrapperStyles
 
 export interface Props {
   id?: string
@@ -23,18 +24,18 @@ const {
   tag: Tag = 'section',
 } = Astro.props
 
-const style = containerStyles[variant] || containerStyles.normal
+const wrapperClass = wrapperStyles[variant]
 ---
 
 <Tag
   id={id}
   class='bg-primary-1000'
-  class:list={[className]}>
+  class:list={[wrapperClass, className]}>
   <slot name='before' />
 
   <div
     class='px-4 md:px-0 md:max-w-7xl md:mx-auto'
-    class:list={[style, containerClass]}>
+    class:list={[containerClass]}>
     <slot />
   </div>
 

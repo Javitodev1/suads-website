@@ -99,6 +99,8 @@
 
   --animate-wiggle: wiggle 10s ease-in-out infinite;
   --animate-shine: shine 10s ease-out infinite;
+
+  --blur-4xl: 128px;
 }
 
 @keyframes shine {
